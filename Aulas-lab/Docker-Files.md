@@ -3,7 +3,7 @@
 
 ## Introdução
 
-Na aula de hoje vamos aprender  a executar várioas arquivos. Esse documento é dividindo em código [Python](#2criando-os-arquivos-de-código-py) e Javascript. Escolha o que for mais conveniente para você. 
+Na aula de hoje vamos aprender  a executar várioas arquivos. Esse documento é dividindo em código [Python](#2criando-os-arquivos-de-código-py) e [JavaScript](#1-javascript). Escolha o que for mais conveniente para você. 
 ## 1. Configuração do ambiente
 
 
@@ -113,4 +113,4 @@ Isso executará todos os arquivos `.py` presentes no diretório de trabalho dent
 
 Tenha em mente que você precisa garantir que todos os arquivos de código sejam adequados para execução contínua, pois eles serão executados em sequência. Certifique-se de que não há conflitos ou dependências que possam causar problemas na execução de vários arquivos simultaneamente (PELO AMOR DE DEUS, ISSO É IMPORTANTE).
 
-## Essa parte do documento é para quem deseja fazer em JavaScript
+## 1. JavaScript
