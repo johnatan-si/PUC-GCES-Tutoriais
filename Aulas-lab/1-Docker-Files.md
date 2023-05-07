@@ -3,7 +3,7 @@
 
 ## Introdução
 
-Na aula de hoje vamos aprender  a executar várioas arquivos. Esse documento é dividindo em código [Python](#2criando-os-arquivos-de-código-py) e [JavaScript](#1javascript). Escolha o que for mais conveniente para você. 
+Na aula de hoje vamos aprender  a executar várioas arquivos. Esse documento é dividindo em código [Python](#2criando-os-arquivos-de-código-py) e [JavaScript](#1-javascript). Escolha o que for mais conveniente para você. 
 ## 1. Configuração do ambiente
 
 
