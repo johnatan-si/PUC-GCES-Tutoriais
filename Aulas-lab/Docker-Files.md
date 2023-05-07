@@ -3,7 +3,7 @@
 
 ## Introdução
 
-Na aula de hoje vamos aprender  a executar várioas arquivos. Esse documento é dividindo em código [Python](#2criando-os-arquivos-de-código-py) e [JavaScript](#1-javascript). Escolha o que for mais conveniente para você. 
+Na aula de hoje vamos aprender  a executar várioas arquivos. Esse documento é dividindo em código [Python](#2criando-os-arquivos-de-código-py) e [JavaScript](#1javascript). Escolha o que for mais conveniente para você. 
 ## 1. Configuração do ambiente
 
 
@@ -114,3 +114,70 @@ Isso executará todos os arquivos `.py` presentes no diretório de trabalho dent
 Tenha em mente que você precisa garantir que todos os arquivos de código sejam adequados para execução contínua, pois eles serão executados em sequência. Certifique-se de que não há conflitos ou dependências que possam causar problemas na execução de vários arquivos simultaneamente (PELO AMOR DE DEUS, ISSO É IMPORTANTE).
 
 ## 1. JavaScript
+
+Vamos começar criando os arquivos de código em Javascript que desejamos executar no Docker Container. Crie os arquivos de código Javascript que você deseja incluir no Docker Container. Por exemplo, vamos criar dois arquivos: `script1.js` e `script2.js`. Esses arquivos serão criados usando o VSCODE. Lembre de criar uma pasta para isso. Abra o seu editor de código e crie os arquivos `script1.js` e `script2.js`. Dentro de cada arquivo, adicione o seguinte código:
+
+**script1.js**
+
+    let a = 3;
+    let b = 4;
+    console.log(`A subtracao e: ${a - b}`);
+
+**script2.js**
+
+    let a = 3;
+    let b = 4;
+    console.log(`A soma e: ${a + b}`);
+Salve os arquivos no mesmo diretório ( pelo amor de Deus, não salve em locais diferentes).
+
+## 3. Criando o Dockerfile
+
+Agora, vamos criar um Dockerfile para definir a configuração do nosso Docker Container. O Dockerfile é um arquivo de texto sem extensão que contém uma série de instruções para construir uma Docker Image.
+Crie um arquivo chamado `Dockerfile` e adicione o seguinte conteúdo:
+
+    # Imagem base para o Node.js
+    FROM node:14-alpine
+    
+    # Criando diretório de trabalho
+    WORKDIR /app
+    
+    # Copiando os arquivos de código para o diretório de trabalho
+    COPY . .
+    
+    # Executando o primeiro arquivo de código
+    CMD ["node", "script1.js"]
+
+Neste exemplo, utilizamos a imagem base do Node.js e definimos o diretório de trabalho como `/app`. Em seguida, copiamos todos os arquivos do diretório atual para o diretório de trabalho dentro do Docker Container. Por fim, configuramos o Docker Container para executar o `script1.js` como o ponto de entrada padrão.
+
+## 4. Construindo a Docker Image
+
+Agora que temos o Dockerfile pronto, podemos usar o Docker para construir uma Docker Image que contém os arquivos de código Javascript. No terminal, navegue até o diretório onde você criou os arquivos de código e o Dockerfile. Execute o seguinte comando para construir a Docker Image (presta atenção no ponto final):
+
+    docker build -t meu-container-javascript .
+
+Isso irá construir uma Docker Image com base no Dockerfile e atribuir o nome `meu-container-javascript` a ela. Certifique-se de incluir o ponto (.) no final do comando.
+
+## 5. Execução de todos os arquivos .JS
+
+Modificação no Dockerfile:
+
+    # Imagem base para o Node.js
+    FROM node:14-alpine
+    
+    # Criando diretório de trabalho
+    WORKDIR /app
+    
+    # Copiando os arquivos de código para o diretório de trabalho
+    COPY . .
+    
+    # Executando todos os arquivos .js no diretório de trabalho
+    CMD ["sh", "-c", "for file in *.js; do node \"$file\"; done"]
+
+Nesse exemplo, utilizamos o comando `COPY . .` para copiar todos os arquivos do diretório atual para o diretório de trabalho dentro do Docker Container.  Além disso, ajustamos o comando `CMD` para executar todos os arquivos `.js` presentes no diretório de trabalho usando um loop em shell. Dessa forma, todos os arquivos `.js` serão executados sequencialmente dentro do Docker Container. Agora, quando você construir e executar o Docker Container, todos os arquivos de código JavaScript presentes no diretório serão executados. Certifique-se de que seus arquivos de código JavaScript não possuam conflitos ou dependências que possam causar problemas na execução de vários arquivos simultaneamente.
+
+Para executar o Docker Container com a modificação, utilize o seguinte comando:
+
+    docker run meu-container-javascript
+
+
+Isso executará todos os arquivos `.js` presentes no diretório de trabalho dentro do Docker Container.
