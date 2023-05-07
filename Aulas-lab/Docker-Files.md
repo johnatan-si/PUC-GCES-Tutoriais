@@ -3,7 +3,7 @@
 
 ## Introdução
 
-Na aula de hoje vamos aprender  a executar várioas arquivos. Esse documento é dividindo em código [Python](#py) e Javascript. Escolha o que for mais conveniente para você. 
+Na aula de hoje vamos aprender  a executar várioas arquivos. Esse documento é dividindo em código [Python](#2criando-os-arquivos-de-código-py) e Javascript. Escolha o que for mais conveniente para você. 
 ## 1. Configuração do ambiente
 
 
@@ -12,7 +12,7 @@ Antes de começarmos, certifique-se de ter o Docker instalado em seu sistema. Se
     docker --version
 Isso deve exibir a versão do Docker instalada em seu sistema. Execute o Docker via interface (sabe que para isso basta clicar no ícone, né?). 
 
-## 2.[Criando os arquivos de código-Py](#py)
+## 2.Criando os arquivos de código-Py
 
 Crie os arquivos de código em Python que desejamos executar no Docker Container.  Vamos criar dois arquivos: `script1.py` e `script2.py`. Tá ligado que você vai criar esses scripts no VSCode e em pasta apropriada, né? 
 
