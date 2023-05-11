@@ -102,3 +102,103 @@ O Docker Compose começará a construir as imagens e iniciar os contêineres par
 Para parar a execução do Docker Compose, pressione `Ctrl + C` no terminal.
 
 UFAAA, terminamos. Agora você criou um Docker Compose com múltiplos arquivos JavaScript. Você pode adicionar mais serviços ao arquivo `docker-compose.yml` e estendê-lo para atender às suas necessidades específicas. O Docker Compose é uma ferramenta para orquestrar e gerenciar aplicativos em contêineres, facilitando o desenvolvimento e o ambiente de execução.
+
+-----------------------------------------------------
+## 1. Ei prof, mas como faço se tenho vários arquivos .js ? 
+
+Agora vamos resolver esse problema. 
+
+## 2 Docker Compose com vários arquivos JavaScript (*.js)
+
+Vamos aprender como criar um Docker Compose para executar vários arquivos JavaScript simultaneamente. Usaremos um exemplo simples de uma aplicação Node.js que possui múltiplos arquivos JavaScript.
+
+### Passo 1: Estrutura do projeto
+
+1.  Crie uma nova pasta para o projeto.
+2.  Coloque todos os arquivos JavaScript (*.js) que deseja executar no diretório `app` dentro da pasta do projeto.
+3.  Certifique-se de que a estrutura do projeto seja semelhante a esta:
+
+    projeto/
+      ├── app/
+      │   ├── script1.js
+      │   ├── script2.js
+      │   ├── script3.js
+      │   └── ...
+      └── docker-compose.yml
+
+
+Por favor, presta atenção, certifique-se de que todos os arquivos JavaScript que deseja executar estejam presentes no diretório `app`.
+
+### Passo 2: Escrevendo o arquivo docker-compose.yml
+
+Agora, vamos criar o arquivo `docker-compose.yml` para configurar o Docker Compose.
+
+1.  Crie um arquivo chamado `docker-compose.yml` na pasta do projeto.
+2.  Abra o arquivo `docker-compose.yml` em um editor de texto.
+
+Adicione o seguinte conteúdo ao arquivo `docker-compose.yml`:
+
+    version: '3'
+    services:
+      app:
+        build:
+          context: .
+          dockerfile: Dockerfile
+        volumes:
+          - ./app:/app
+        command: node /app/*.js
+
+Neste arquivo, definimos um serviço chamado `app`. Configuramos a construção da imagem usando o arquivo `Dockerfile`. Mapeamos o diretório `app` para o diretório `/app` dentro do contêiner usando volumes. E, por fim, definimos o comando para executar todos os arquivos JavaScript (*.js) presentes no diretório `/app` do contêiner.
+
+### Passo 3: Escrevendo o Dockerfile
+
+Agora, vamos criar o arquivo `Dockerfile` para construir a imagem Docker.
+
+1.  Crie um arquivo chamado `Dockerfile` na pasta do projeto.
+2.  Abra o arquivo `Dockerfile` em um editor de texto.
+
+Adicione o seguinte conteúdo ao arquivo `Dockerfile`:
+
+    FROM node:14-alpine
+    
+    WORKDIR /app
+    
+    COPY package.json .
+    RUN npm install
+    
+    COPY . .
+    
+    CMD ["node", "/app/*.js"]
+
+
+Neste arquivo, usamos a imagem base do Node.js, definimos o diretório de trabalho como `/app`, copiamos o arquivo `package.json` e executamos o comando `npm install` para instalar as dependências (você prestou atenção no seu diretório de trabalho? Ele se chama app, né?). Em seguida, copiamos todos os arquivos do projeto para o diretório de trabalho do contêiner. Por fim, usamos o comando `node /app/*.js` para executar todos os arquivos JavaScript (*.js) presentes no diretório `/app` do contêiner.
+
+### Passo 4: Executando o Docker Compose
+
+Agora que tudo está configurado, podemos executar o Docker Compose e iniciar a execução dos arquivos JavaScript.
+
+1.  Abra um terminal ou prompt de comando na pasta do projeto.
+
+2. Certifique-se de que o Docker e o Docker Compose estejam instalados e em execução.
+    
+3.  Execute o seguinte comando no terminal para iniciar o Docker Compose:
+
+    docker-compose up
+Isso iniciará a construção da imagem e a criação do contêiner com base nas configurações definidas no arquivo `docker-compose.yml`.
+4.  O Docker Compose executará todos os arquivos JavaScript (*.js) presentes no diretório `app` e exibirá a saída no terminal.
+
+
+### Observações importantes:
+
+-   Certifique-se de que todos os arquivos JavaScript que deseja executar estejam presentes no diretório `app` antes de iniciar o Docker Compose.
+    
+-   Se você adicionar ou remover arquivos JavaScript após iniciar o Docker Compose, será necessário parar e reiniciar o contêiner para que as alterações sejam refletidas.
+    
+-   Certifique-se de que todas as dependências necessárias estejam listadas corretamente no arquivo `package.json` do projeto.
+    
+-   Caso necessário, você pode ajustar outras configurações no arquivo `docker-compose.yml` ou `Dockerfile` conforme as necessidades do seu projeto.
+    
+
+Agora você tem um Docker Compose configurado para executar vários arquivos JavaScript de uma só vez. Isso facilitará a execução e o gerenciamento de projetos que possuem vários arquivos JavaScript.
+
+*Lembre-se de adaptar esse exemplo ao seu projeto, adicionando outras configurações ou serviços conforme necessário.*
