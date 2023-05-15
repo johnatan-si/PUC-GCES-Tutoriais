@@ -14,7 +14,7 @@ Antes de começar, certifique-se de ter o seguinte instalado em seu sistema (já
 1. Crie um diretório para o projeto em um local de sua preferência.
     
 2.  Abra um terminal ou prompt de comando e navegue até o diretório recém-criado.
-3. 
+
 ## Passo 2: Criando o arquivo Dockerfile
 
 1. No diretório do projeto, crie um arquivo chamado `Dockerfile`.
