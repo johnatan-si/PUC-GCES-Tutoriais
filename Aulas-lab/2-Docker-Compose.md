@@ -1,12 +1,11 @@
 
 # Hoje vamos aprender a criar um Docker Compose com Múltiplos Arquivos JavaScript
 
-Se liga aí, aprenderemos como criar um **Docker Compose** para executar múltiplos arquivos **Javascript** em c*ontêineres isolados*. Usaremos o Docker Compose para orquestrar a execução de vários serviços e garantir que eles possam se comunicar entre si. 
+Se liga aí, aprenderemos como criar um **Docker Compose** para executar múltiplos arquivos **Javascript** em contêineres isolados*. Usaremos o Docker Compose para orquestrar a execução de vários serviços e garantir que eles possam se comunicar entre si. 
 
 ## 1. Configuração do Ambiente
 
-Como já instalamos o Docker, não preciso falar que ele deve ser iniciado, né?  Certifique-se de ter o Docker e o Docker Compose instalados em seu sistema. Você pode baixá-los e instalá-los a partir do site oficial do Docker: [https://www.docker.com/get-started](https://www.docker.com/get-started)
-
+Certifique-se de ter o Docker e o Docker Compose instalados em seu sistema. Você pode baixá-los e instalá-los a partir do site oficial do Docker: [https://www.docker.com/get-started](https://www.docker.com/get-started)
 Após a instalação, verifique se o Docker e o Docker Compose estão funcionando corretamente executando os seguintes comandos no terminal:
 
     docker --version
