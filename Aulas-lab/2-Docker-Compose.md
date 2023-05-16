@@ -132,6 +132,21 @@ Vamos aprender como criar um Docker Compose para executar vários arquivos JavaS
 
 Por favor, presta atenção, certifique-se de que todos os arquivos JavaScript que deseja executar estejam presentes no diretório `app`.
 
+Faça o script1.js dessa forma:
+````
+    console.log("Codigo script1.js em execucao!");
+````
+
+script2.js
+````
+    console.log("Codigo script2.js em execucao!");
+````
+
+script3.js
+````
+    console.log("Codigo script2.js em execucao!");
+````
+
 ### Passo 2: Escrevendo o arquivo docker-compose.yml
 
 Agora, vamos criar o arquivo `docker-compose.yml` para configurar o Docker Compose.
