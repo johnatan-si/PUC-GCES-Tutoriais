@@ -1,6 +1,6 @@
 # Introdução ao Docker Compose para um site JavaScript com Express
 
-Você aprenderá como usar o Docker e o Docker **Compose** para criar um ambiente de desenvolvimento para um site em JavaScript usando o framework Express. Vamos criar um contêiner Docker para executar o servidor Express e usar o Docker Compose para orquestrar a configuração do nosso ambiente.
+Você aprenderá como usar o Docker **Compose** para criar um ambiente de desenvolvimento para um site em JavaScript usando o framework Express. Vamos criar um contêiner Docker para executar o servidor Express e usar o Docker Compose para orquestrar a configuração do nosso ambiente.
 
 ## Passo 1: Configurando o projeto
 
@@ -26,29 +26,18 @@ Dentro de public adicione:
 index.html 
 ````
 <!DOCTYPE  html>
-
 <html>
-
 <head>
-
 <title>Meu Site</title>
-
 <script  src="arquivo1.js"></script>
-
 <script  src="arquivo2.js"></script>
-
 <script  src="index.js"></script>
-
 </head>
-
 <body>
 
 <h1>Exemplo de Integração com JavaScript</h1>
-
 <div  id="resultado1"></div>
-
 <div  id="resultado2"></div>
-
 </body>
 
 </html>
