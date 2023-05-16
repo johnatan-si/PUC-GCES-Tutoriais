@@ -15,7 +15,7 @@ Isso deve exibir as versões do Docker e do Docker Compose instaladas em seu sis
 
 ## 2. Criando os arquivos de código
 
-Vamos começar criando os arquivos de código JavaScript que desejamos executar em nossos contêineres.
+Vamos começar criando os arquivos de código JavaScript que desejamos executar em nossos contêineres. Crie um diretório chamado app.
 
 Crie os arquivos de código JavaScript que você deseja incluir no Docker Compose. Por exemplo, criaremos dois arquivos: `script1.js` e `script2.js`.
 
