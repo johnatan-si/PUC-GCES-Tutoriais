@@ -176,8 +176,22 @@ Agora, vamos criar o arquivo `Dockerfile` para construir a imagem Docker.
 2.  Abra o arquivo `Dockerfile` em um editor de texto.
 
 Adicione o seguinte conteúdo ao arquivo `Dockerfile`:
+````
+FROM node:14-alpine
 
-    FROM node:14-alpine
+WORKDIR /app
+
+COPY . .
+
+CMD ["node", "/app/*.js"]
+````
+
+
+Caso a sua aplicação possua dependências, então o dockerfile diferirá, pois precisamos informar o package.json: 
+
+
+````
+FROM node:14-alpine
     
     WORKDIR /app
     
@@ -187,7 +201,7 @@ Adicione o seguinte conteúdo ao arquivo `Dockerfile`:
     COPY . .
     
     CMD ["node", "/app/*.js"]
-
+````
 
 Neste arquivo, usamos a imagem base do Node.js, definimos o diretório de trabalho como `/app`, copiamos o arquivo `package.json` e executamos o comando `npm install` para instalar as dependências (você prestou atenção no seu diretório de trabalho? Ele se chama app, né?). Em seguida, copiamos todos os arquivos do projeto para o diretório de trabalho do contêiner. Por fim, usamos o comando `node /app/*.js` para executar todos os arquivos JavaScript (*.js) presentes no diretório `/app` do contêiner.
 
@@ -200,8 +214,9 @@ Agora que tudo está configurado, podemos executar o Docker Compose e iniciar a 
 2. Certifique-se de que o Docker e o Docker Compose estejam instalados e em execução.
     
 3.  Execute o seguinte comando no terminal para iniciar o Docker Compose:
-
+````
     docker-compose up
+````
 Isso iniciará a construção da imagem e a criação do contêiner com base nas configurações definidas no arquivo `docker-compose.yml`.
 4.  O Docker Compose executará todos os arquivos JavaScript (*.js) presentes no diretório `app` e exibirá a saída no terminal.
 
