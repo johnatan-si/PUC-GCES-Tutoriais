@@ -2,6 +2,13 @@
 
 Você aprenderá como usar o Docker **Compose** para criar um ambiente de desenvolvimento para um site em JavaScript usando o framework Express. Vamos criar um contêiner Docker para executar o servidor Express e usar o Docker Compose para orquestrar a configuração do nosso ambiente.
 
+**Resumão sobre o DOCKER COMPOSE**
+
+O Docker Compose é uma ferramenta que permite definir e gerenciar aplicativos multi-container utilizando o Docker. O Docker Compose utiliza um arquivo YAML para configurar os serviços, redes e volumes necessários para executar uma aplicação. Com ele, é possível criar, configurar e executar vários containers Docker como uma única unidade. O Docker Compose simplifica o processo de execução de aplicativos compostos por vários serviços. Ele permite que você defina a estrutura do seu aplicativo, especificando os serviços necessários, as dependências entre eles e as configurações associadas. Essa definição é feita no arquivo YAML do Docker Compose. O arquivo YAML do Docker Compose descreve os serviços do aplicativo, incluindo as imagens Docker a serem utilizadas, as portas que devem ser expostas, as variáveis de ambiente, os volumes compartilhados e qualquer outra configuração específica necessária para cada serviço. Com o Docker Compose, você pode iniciar, parar e reiniciar todo o aplicativo com um único comando. Ele também facilita a escalabilidade do aplicativo, permitindo a replicação de serviços específicos conforme necessário. O Docker Compose é particularmente útil em ambientes de desenvolvimento, testes e integração contínua, onde é necessário criar e executar rapidamente um ambiente consistente com vários serviços. Ele também é útil para implantar aplicativos em ambientes de produção.
+
+Em resumo, o Docker Compose é uma ferramenta poderosa para gerenciar aplicativos Docker complexos, permitindo a definição e execução de aplicativos multi-container de forma fácil e consistente.
+
+
 ## Passo 1: Configurando o projeto
 
 1.  Crie uma pasta para o seu projeto e navegue até ela no terminal.
