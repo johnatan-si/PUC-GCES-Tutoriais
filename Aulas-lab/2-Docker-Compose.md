@@ -26,9 +26,11 @@ Abra o seu editor de código e crie os arquivos `script1.js` e `script2.js`. Den
     console.log("Codigo script1.js em execucao!");
     
 **script2.js**
+````
     let a = 3;
     let b = 4;
     console.log(`A SOMA E: ${a + b}`);
+````
 Ei, presta atenção, você deve salvar os dois arquivos no mesmo diretório. 
 
 ## 3. Criando o arquivo Dockerfile para cada serviço
