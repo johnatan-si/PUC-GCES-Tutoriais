@@ -98,7 +98,9 @@ Agora que temos todos os arquivos configurados, podemos executar o Docker Compos
 Execute o seguinte comando para iniciar os serviços definidos no arquivo `docker-compose.yml`:
 
     docker-compose up
-O Docker Compose começará a construir as imagens e iniciar os contêineres para cada serviço. Você verá a saída dos arquivos de código Javascript sendo exibida no terminal.
+O Docker Compose começará a construir as imagens e iniciar os contêineres para cada serviço. Você verá a saída dos arquivos de código Javascript sendo exibida no terminal. O resultado tem que ser similar a imagem abaixo: 
+
+![enter image description here](https://github.com/johnatan-si/PUC-GCES-Tutoriais/blob/main/Aulas-lab/img/composeExemple.png?raw=true)
 
 Para parar a execução do Docker Compose, pressione `Ctrl + C` no terminal.
 
