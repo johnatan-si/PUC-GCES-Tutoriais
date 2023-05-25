@@ -1,0 +1,5 @@
+FROM postgres
+ENV POSTGRES_DB=library_db
+ENV POSTGRES_USER=postgres
+ENV POSTGRES_PASSWORD=password
+EXPOSE 5432
