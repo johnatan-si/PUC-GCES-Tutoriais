@@ -30,9 +30,10 @@ Vamos explorar uma simulação detalhada de trabalho em equipe no GitHub, usando
     
 3.  Mantenha sua branch atualizada com a `dev` regularmente:
     
-
-
-`git pull origin dev` 
+    - Alternar para a branch de dev: `git checkout dev`
+    - Atualizar com as últimas mudanças: `git pull origin dev`
+    - Alternar para a minha branch atual: `git checkout nome-da-minha-branch `
+    - Fazer a junção de mudanças de dev para minha branch atual: `git merge dev`
 
 
 ## Passo 4: Configurando Webhook para Vincular Pull Requests a Issues
