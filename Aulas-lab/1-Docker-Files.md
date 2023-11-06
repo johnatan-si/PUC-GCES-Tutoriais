@@ -103,7 +103,7 @@ COPY *.py /app/
 WORKDIR /app
 
 # Execute todos os scripts Python no diretório de trabalho
-CMD ["bash", "-c", "for script in *.py; do python $script; done"]]
+CMD ["bash", "-c", "for script in *.py; do python $script; done"]
 ````
 Nesse exemplo, utilizamos o comando `COPY . .` para copiar todos os arquivos do diretório atual para o diretório de trabalho dentro do Docker Container. Além disso, substituímos o comando `python script1.py` pelo comando `python -m pytest`, que irá executar todos os arquivos `.py` no diretório de trabalho usando o pytest. Agora, quando você construir e executar o Docker Container, todos os arquivos de código Python presentes no diretório serão executados. Certifique-se de ter o pytest instalado no seu ambiente de desenvolvimento para que o comando `pytest` funcione corretamente dentro do Docker Container.
 
