@@ -56,7 +56,9 @@ Neste exemplo, utilizamos a imagem base do Python e definimos o diretório de tr
 
 ## 4. Construindo a Docker Image
 
-Agora que temos o Dockerfile pronto, podemos usar o Docker para construir uma Docker Image que contém os arquivos de código Python. No terminal, navegue até o diretório onde você criou os arquivos de código e o Dockerfile. Execute o seguinte comando para construir a Docker Image:
+Agora que temos o Dockerfile pronto, podemos usar o Docker para construir uma Docker Image que contém os arquivos de código Python. No terminal, navegue até o diretório onde você criou os arquivos de código e o Dockerfile. No comando docker build -t meu-container-python ., a opção -t é usada para especificar uma "tag" ou um nome para a imagem Docker que está sendo construída. A tag é uma maneira de nomear e identificar sua imagem de forma mais amigável e legível.
+
+No exemplo, a tag "meu-container-python" está sendo atribuída à imagem que está sendo construída. Isso significa que, após a construção da imagem, você poderá fazer referência a ela pelo nome "meu-container-python" em vez de usar o ID da imagem, que é mais difícil de lembrar. Execute o seguinte comando para construir a Docker Image:
 
     docker build -t meu-container-python .
 Isso irá construir uma Docker Image com base no Dockerfile e atribuir o nome `meu-container-python` a ela. Certifique-se de incluir o ponto (.) no final do comando para indicar o diretório atual como contexto para a construção da imagem (pelo amor de Deus. O ponto é necessário).
