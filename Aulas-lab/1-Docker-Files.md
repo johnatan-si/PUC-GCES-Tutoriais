@@ -92,18 +92,19 @@ Lembre-se de que o Docker oferece uma maneira conveniente de isolar e executar a
 Para executar todos os arquivos de código fonte dentro do Docker Container, você pode fazer algumas alterações no Dockerfile. Vamos ajustar o comando `CMD` para executar todos os arquivos `.py` encontrados no diretório de trabalho.
 
 Aqui está a modificação no Dockerfile:
+````
+# Use a imagem base Python
+FROM python:3.8
 
-    # Imagem base para o Python
-    FROM python:3.9
-    
-    # Criando diretório de trabalho
-    WORKDIR /app
-    
-    # Copiando os arquivos de código para o diretório de trabalho
-    COPY . .
-    
-    # Executando todos os arquivos .py no diretório de trabalho
-    CMD ["python", "-m", "pytest"]
+# Copie todos os arquivos Python do diretório local para o diretório de trabalho no contêiner
+COPY *.py /app/
+
+# Defina o diretório de trabalho como /app
+WORKDIR /app
+
+# Execute todos os scripts Python no diretório de trabalho
+CMD ["bash", "-c", "for script in *.py; do python $script; done"]]
+````
 Nesse exemplo, utilizamos o comando `COPY . .` para copiar todos os arquivos do diretório atual para o diretório de trabalho dentro do Docker Container. Além disso, substituímos o comando `python script1.py` pelo comando `python -m pytest`, que irá executar todos os arquivos `.py` no diretório de trabalho usando o pytest. Agora, quando você construir e executar o Docker Container, todos os arquivos de código Python presentes no diretório serão executados. Certifique-se de ter o pytest instalado no seu ambiente de desenvolvimento para que o comando `pytest` funcione corretamente dentro do Docker Container.
 
 Para executar o Docker Container com a modificação, utilize o seguinte comando:
